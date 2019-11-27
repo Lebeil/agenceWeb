@@ -1,0 +1,1220 @@
+/* Définition des 3 polices personnalisées */
+@font-face {
+    font-family: 'fontawesome';
+    src: url('fonts/fontawesome-webfont.eot');
+    src: url('fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome-webfont.woff') format('woff'),
+    url('fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('fonts/fontawesome-webfont.svg#fontawesome') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'glyphicons-halflings-regular';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflings-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url("fonts/Roboto-Regular.ttf");
+
+}
+
+body {
+    font-family: Roboto-regular, sans-serif; /*Mettre Roboto partout sur le site*/
+    margin: 0 auto;
+}
+
+/* En tête */
+nav ul {
+    list-style-type: none; /*pas de points*/
+    display: flex;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    height: 43px;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 33px;
+}
+
+nav a:hover { /*pour avoir le trait bleu au-dessus*/
+    color: #5cadd3;
+    border-top: 3px solid #5cadd3;
+    padding-top: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: fixed; /*le menu sera visible partout même en scrollant*/
+    background-color: white;
+    width: 100%;
+    padding-top: 0; /*la barre sera collée au haut*/
+    padding-bottom: 10px;
+    z-index: 98; /*pour être visible partout*/
+
+}
+
+/* le corps */
+/*== Les sections ==*/
+section h1 {
+    font-family: "Roboto-bold", sans-serif;
+    margin: 0;
+}
+
+/*Accueil*/
+
+#i1, #i2 {
+    display: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 38%;
+}
+
+/*Pour éviter de se superposer*/
+.container .slide_img {
+    position: absolute;
+    width: 100%;
+    height: 100%; /*pour ajuster avec les barres de défilement*/
+}
+
+/*Pour se positionner au même niveau les éléments*/
+.container .slide_img img {
+    width: 100%;
+    height: 100%; /*pour ajuster avec les barres de défilement*/
+}
+
+/*pour faire un cercle autour des chevrons*/
+.prev, .next {
+    width: 37.5px;
+    height: 75px;
+    line-height: 75px;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, .3);
+    color: rgba(244, 244, 244, .9);
+    z-index: 80;
+    transition: .45s;
+    cursor: pointer; /*pour avoir la main quand on survole le bouton*/
+    text-align: center;
+}
+
+.next {
+    right: 0;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+
+}
+
+.prev {
+    left: 0;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+}
+
+label span { /*personnaliser les chevrons fas fa-angle */
+    position: relative;
+    font-size: 30pt;
+    color: white;
+}
+
+label .next {
+    margin: 0;
+}
+
+.prev:hover, .next:hover {
+    transition: .3s;
+    background-color: rgba(88, 88, 89, .8);
+}
+
+.container #nav_slide {
+    width: 100%;
+    bottom: -1px;
+    height: 5px;
+    position: absolute;
+    display: flex;
+    text-align: center;
+    z-index: 80;
+}
+
+#nav_slide .barres {
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    margin: 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, .2);
+    transition: .4s;
+}
+
+/*Essentiel pour faire slider les 2 images*/
+.slide_img {
+    z-index: -50;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two {
+    z-index: 9;
+    animation: scroll 1s ease-in-out; /*transition départ et fin lents.*/
+}
+
+#i1:checked ~ #nav_slide #barre1,
+#i2:checked ~ #nav_slide #barre2 {
+    background-color: rgb(110, 172, 207);
+}
+
+@keyframes scroll { /*animation entre les diaporamas*/
+    0% {
+        opacity: .4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#accueil {
+    padding-top: 100px;
+}
+
+div .titreA {
+    position: absolute;
+    z-index: 80;
+    width: 100%;
+}
+
+#accueil H1 {
+    font-family: "Roboto-bold", sans-serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 100px;
+    padding-left: 20px;
+    width: 50%;
+    margin-top: 120px;
+    text-align: left;
+
+}
+
+#accueil mark {
+    color: #5cadd3;
+    background-color: transparent;
+}
+
+#accueil p {
+    padding-left: 20px;
+    margin-left: 100px;
+    font-size: larger;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.bouton_bleu {
+    color: white;
+    border: 1px solid transparent; /*transparent pour cacher la bordure*/
+    background-color: #5cadd3;
+    border-radius: 5px;
+    font-size: 1.6em;
+    text-align: left;
+    padding: 8px 16px 8px 16px;;
+    text-decoration: none;
+    margin-left: 120px;
+    top: 20px;
+    box-shadow: 0 3px 1px #468cad; /*ombre par dessous*/
+}
+
+/*Services*/
+#services h1 {
+    padding-top: 130px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 3em;
+
+}
+
+#milieu p {
+    text-align: center;
+
+}
+
+#services div {
+    text-align: center;
+}
+
+#services span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.trait {
+    width: 100px;
+    border-bottom: 1px solid gray;
+}
+
+.fa-circle {
+    color: #5cadd3;
+}
+
+#cadre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1320px; /* image et cercle centré pour toujours*/
+}
+
+#cercle {
+    margin-left: 5%;
+
+}
+
+#image {
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#services, h2, p {
+    font-size: medium;
+    text-align: left;
+}
+
+#services ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-top: 12%;
+    margin-right: 10%;
+}
+
+.icone1 p:before {
+    content: "\f201"; /* FontAwesome Unicode */
+    font-family: FontAwesome, sans-serif; /*Sans FontAwesome, pas d'icône*/
+    float: left;
+    color: #5cadd3;
+    font-size: 20px;
+    margin-left: -80px;
+    margin-top: -5px;
+    border-radius: 100%;
+    box-shadow: 0 0 2px gray;
+    padding: 0.8em 0.8em;
+}
+
+.icone1 .fa-circle {
+    position: relative;
+    float: left;
+    margin-left: -30px;
+    margin-top: 16px;
+    font-size: 10px;
+
+}
+
+.icone2 p:before {
+    content: "\f1b3"; /* FontAwesome Unicode */
+    font-family: FontAwesome, sans-serif; /*Sans FontAwesome, pas d'icône*/
+    color: #5cadd3;
+    float: left;
+    font-size: 19px;
+    margin-left: -80px;
+    margin-top: -5px;
+    border-radius: 100%;
+    box-shadow: 0 0 2px gray;
+    padding: 0.8em 0.8em;
+}
+
+.icone2 .fa-circle {
+    position: relative;
+    float: left;
+    margin-left: -30px;
+    margin-top: 16px;
+    font-size: 10px;
+
+}
+
+#icone3 p:before {
+    content: "\f200"; /* FontAwesome Unicode */
+    font-family: FontAwesome, sans-serif; /*Sans FontAwesome, pas d'icône*/
+    color: #5cadd3;
+    float: left;
+    font-size: 20px;
+    margin-left: -77px;
+    margin-top: -5px;
+    border-radius: 100%;
+    box-shadow: 0 0 2px gray;
+    padding: 0.8em 0.8em;
+}
+
+#icone3 .fa-circle {
+    position: relative;
+    float: left;
+    margin-left: -30px;
+    margin-top: 16px;
+    font-size: 10px;
+
+}
+
+/* Projet */
+
+/*mettre les #portfolio et #allworks verticalement*/
+/*centrer les images*/
+
+.allworks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1320px; /* taille unique pour les résolutions > 1320px */
+    margin: auto;
+}
+
+/*Pour afficher les outer-line*/
+#outerline {
+    text-align: center;
+}
+
+#projet span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.outer-line {
+    width: 100px;
+    border-bottom: 1px solid gray;
+}
+
+/*condition affichage des images avec target*/
+#allworks:target .creative,
+#allworks:target .corporate,
+#allworks:target .portfolio {
+    display: block;
+}
+
+#creative:target .portfolio,
+#creative:target .corporate {
+    display: none;
+}
+
+#corporate:target .creative,
+#corporate:target .portfolio {
+    display: none;
+}
+
+#portfolio:target .creative,
+#portfolio:target .corporate {
+    display: none
+}
+
+/*le menu*/
+.pprojet { /*Désigne le p dans "nos projets"*/
+    text-align: center;
+}
+
+#projet h1 {
+    margin-top: 100px;
+    padding-top: 100px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 3em;
+}
+
+#projet {
+    background-color: #F3F3F3;
+}
+
+#projet ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+
+#projets li {
+    display: inline-block;
+    width: 120px;
+    border-radius: 10px 10px 10px 10px; /*Arrondir le menu*/
+    z-index: 1;
+}
+
+#projets li a {
+    display: block;
+    background: lightgray; /*couleur du voile*/
+    color: black;
+    text-align: center;
+    padding: 21px 21px 21px 21px;
+    text-decoration: none;
+    font-size: medium;
+}
+
+#projets li a:hover {
+    background-color: #5cadd3;
+    border-bottom: 4px solid #468cad;
+    color: #fff;
+}
+
+#projets li:hover:after { /*voile noir pour les images*/
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    background-color: #468cad;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0 auto;
+    -webkit-transform: rotate(45deg); /*pour la version Safari*/
+    transform: rotate(45deg); /*tourner le carré en losange*/
+}
+
+#projets li:first-child a {
+    border-radius: 5px 0 0 5px;
+}
+
+#projets li:last-child a {
+    border-radius: 0 5px 5px 0;
+}
+
+/*Pour laisser la flèche et la casse bleue actives quand on la sélectionne par défaut*/
+
+#projets .lien1 { /*affichage bleu sur la case*/
+    background-color: #5cadd3;
+    border-bottom: 4px solid #468cad;
+    color: #fff;
+}
+
+#projets li:first-child:after { /*affichage de la flèche bleue*/
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    background-color: #468cad;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0 auto;
+    transform: rotate(45deg);
+}
+
+/*pour le lien2*/
+#creative:target .lien1 { /*Laisser le lien1 en gris, sans sélection*/
+    background: lightgray;
+    color: black;
+    border: 0;
+}
+
+#creative:target li:first-child:after { /*enlever la flèche bleue*/
+    display: none;
+}
+
+#creative:target .lien2 {
+    background-color: #5cadd3;
+    border-bottom: 4px solid #468cad;
+    color: #fff;
+}
+
+#creative:target li:nth-child(2):after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    background-color: #468cad;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0 auto;
+    transform: rotate(45deg);
+}
+
+/*pour le lien3*/
+#corporate:target .lien1 {
+    background: lightgray;
+    color: black;
+    border: 0;
+}
+
+#corporate:target li:first-child:after {
+    display: none;
+}
+
+#corporate:target .lien3 {
+    background-color: #5cadd3;
+    border-bottom: 4px solid #468cad;
+    color: #fff;
+}
+
+#corporate:target li:nth-child(3):after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    background-color: #468cad;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0 auto;
+    transform: rotate(45deg);
+}
+
+/*Pour le lien 4 Portfolio*/
+#portfolio:target .lien1 {
+    background: lightgray;
+    color: black;
+    border: 0;
+}
+
+#portfolio:target li:first-child:after {
+    display: none;
+}
+
+#portfolio:target .lien4 {
+    background-color: #5cadd3;
+    border-bottom: 4px solid #468cad;
+    color: #fff;
+}
+
+#portfolio:target li:nth-child(4):after {
+    content: "";
+    display: block;
+    position: relative;
+    z-index: -1;
+    background-color: #468cad;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0 auto;
+    transform: rotate(45deg);
+}
+
+figure {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 50px;
+    bottom: 50px;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    width: 100%;
+    height: 40%;
+    color: white;
+}
+
+figcaption h3 {
+    margin: 2% auto 2% 2%; /*marge pour le titre*/
+    font-size: large;
+    font-weight: bold;
+
+}
+
+figcaption p {
+    text-align: left;
+    margin: 5% auto 2% 2%; /*espace entre le titre et le paragraphe*/
+    font-size: small;
+    word-wrap: break-word;
+}
+
+figure:hover figcaption {
+    display: block;
+}
+
+figure img {
+    height: 100%;
+    width: 300px;
+}
+
+/* l'oeil avec le cercle bleu */
+.fa-eye {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: 15px;
+    bottom: 16px;
+    border: solid 2px white; /*cercle en ligne blanc*/
+    border-radius: 25px;
+    background-color: #4c9eb1;
+    position: absolute;
+    content: "\f06e"; /* FontAwesome icône oeil */
+    font-family: FontAwesome, sans-serif;
+    font-size: medium;
+    line-height: 40px; /*mettre l'oeil au milieu du cercle*/
+    text-align: center;
+}
+
+/* Contact */
+
+#contact {
+    position: relative;
+}
+
+iframe {
+    position: absolute;
+    width: 100%;
+    height: 900px;
+    z-index: 40;
+    border: 0;
+}
+
+#blue {
+    position: relative;
+    background-color: rgba(92, 173, 211, 0.4);
+    width: 100%;
+    height: 900px;
+    z-index: 50;
+    bottom: 0;
+}
+
+.formulaire {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    float: right;
+    right: 20%;
+    z-index: 60;
+    top: 100px;
+    width: 400px;
+
+}
+
+.formulaire h3 {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 8%;
+    margin-left: 4%;
+    width: 104%;
+}
+
+.formulaire p {
+    margin: 0 5%; /*marge 5% sur les côtés et non en haut et en bas*/
+}
+
+#enteteform {
+    margin: 2%;
+    text-align: left;
+    font-size: medium;
+    width: 40%;
+}
+
+#pseudo, #mail, #subject, #message {
+    border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    padding: 2%;
+    width: 80%;
+
+}
+
+#message {
+    height: 200px;
+    color: gray;
+    width: 80%;
+    margin-top: 0; /*supprimer la marge d'origine*/
+}
+
+#send {
+    color: white;
+    border: 1px solid transparent;
+    background-color: #5cadd3;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: left;
+    padding: 8px 16px 8px 16px;;
+    text-decoration: none;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    cursor: pointer; /*pour avoir la main quand on survole le bouton*/
+    box-shadow: 0 3px 1px #468cad; /*ombre par dessous*/
+}
+
+/* viewport affichage mobile*/
+
+@media screen and (max-device-width: 599px) {
+    body {
+        overflow-x: hidden;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+    }
+
+    header ul {
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    nav a:hover {
+        border-top: 0;
+        height: auto;
+    }
+
+    nav a {
+        height: auto;
+    }
+
+    .slide_img, .barres { /*enlever le slide et la barre*/
+        display: none;
+    }
+
+    #accueil {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    #accueil h1 {
+        color: black;
+        text-align: center;
+        width: 100%;
+        margin-top: 20%;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    #accueil p {
+        color: black;
+        margin-bottom: 10%;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .bouton_bleu {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        top: 10%;
+        width: 40%;
+        margin: auto;
+
+    }
+
+    div#milieu {
+        width: 100%;
+        text-align: center;
+    }
+
+    #services #image {
+        float: none;
+        padding-left: 0;
+    }
+
+    #services h1 {
+        margin-top: 100%; /*décalé le titre en laissant un espace entre l'acceuil*/
+        padding: 0;
+        text-align: center;
+    }
+
+    #services p {
+        text-align: justify;
+        margin: 0;
+    }
+
+    .pservices {
+        text-align: center !important; /*mettre ce texte forcée en centrant */
+    }
+
+    #services { /*décalé la section par rapport à Accueil*/
+        text-align: center;
+        width: 100%;
+    }
+
+    .icone1 p:before { /*mettre les icones en bonne place*/
+        margin-left: -38px;
+        padding: 0.2em 0.2em;
+    }
+
+    .icone1 .fa-circle {
+        margin-left: -12px;
+        margin-top: 5px;
+    }
+
+    .icone2 p:before { /*mettre les icones en bonne place*/
+        margin-left: -38px;
+        padding: 0.2em 0.2em;
+    }
+
+    .icone2 .fa-circle {
+        margin-left: -12px;
+        margin-top: 5px;
+    }
+
+    #icone3 p:before { /*mettre les icones en bonne place*/
+        margin-left: -38px;
+        padding: 0.2em 0.2em;
+    }
+
+    #icone3 .fa-circle {
+        margin-left: -12px;
+        margin-top: 5px;
+    }
+
+    #cadre {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #image {
+        display: none;
+    }
+
+    #services ul {
+        padding-right: 0;
+        width: auto;
+    }
+
+    #cercle { /* Marges équilibrées avec le li*/
+        margin: 0;
+    }
+
+    #service li {
+        width: 100%;
+    }
+
+    #service a {
+        width: 100%;
+        text-align: center;
+    }
+
+    #projet {
+        width: 100%;
+    }
+
+    #projet h1 {
+        padding: 0;
+    }
+
+    #projet ul {
+        width: 100%;
+    }
+
+    #projets li a:first-child {
+        font-size: 9px;
+    }
+
+    #projets li {
+        width: 100%;
+    }
+
+    #projets a {
+        text-align: center;
+    }
+
+    #contact {
+        width: 100%;
+    }
+
+    #projets li a {
+        padding: 25px 21px 21px 21px;
+    }
+
+    iframe, #blue {
+        height: 300px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .formulaire {
+        position: relative;
+        top: 0;
+        float: none;
+        right: 0; /*right 20% déjà*/
+        width: 100%;
+    }
+
+    .formulaire p {
+        width: 108%;
+    }
+
+    .p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: small;
+    }
+
+    .formulaire h3 {
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    #send {
+        text-align: center;
+        font-size: 30px;
+
+    }
+
+    form {
+        margin: auto;
+    }
+
+}
+
+/* Pour les ipad et tablettes */
+
+@media screen and (min-width: 600px) and (max-width: 989px) {
+    body {
+        font-family: Roboto-regular, sans-serif; /*Mettre Roboto partout sur le site*/
+        overflow-x: hidden;
+        margin: 0 auto;
+    }
+
+    section {
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    #accueil {
+        width: 100%;
+        height: auto;
+    }
+
+    #accueil h1 {
+        margin-top: 10%;
+        margin-left: 10px;
+        font-size: 20px;
+        width: 50%
+    }
+
+    #accueil p {
+        margin-left: 10px;
+        font-size: 20px;
+        width: 50%;
+    }
+
+    /*Slides*/
+    .container .slide_img img {
+        width: 100%;
+        height: 350px;
+    }
+
+    .container .slide_img {
+        display: block;
+        height: 350px;
+    }
+
+    .slide_img, .barres { /*enlever le slide et la barre*/
+        display: none;
+    }
+
+    .prev, .next {
+        display: none;
+    }
+
+    .bouton_bleu {
+        margin-left: 30px;
+    }
+
+    #services ul {
+        text-align: left;
+        width: 100%;
+        padding: 0;
+    }
+
+    #cercle { /* Marges équilibrées avec le li*/
+        margin-left: 7%;
+        margin-right: 1%;
+    }
+
+    #cadre {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #services #image {
+        padding-left: 0;
+        float: none;
+    }
+
+    #image {
+        margin: 10%;
+    }
+
+    div .titreA {
+        width: 100%;
+    }
+
+    .icone1 p:before { /*mettre les icones en bonne place*/
+        margin-left: -50px;
+        padding: 0.5em 0.5em;
+    }
+
+    .icone1 .fa-circle {
+        margin-left: -12px;
+        margin-top: 10px;
+    }
+
+    .icone2 p:before { /*mettre les icones en bonne place*/
+        margin-left: -50px;
+        padding: 0.5em 0.5em;
+    }
+
+    .icone2 .fa-circle {
+        margin-left: -12px;
+        margin-top: 10px;
+    }
+
+    #icone3 p:before { /*mettre les icones en bonne place*/
+        margin-left: -50px;
+        padding: 0.5em 0.5em;
+    }
+
+    #icone3 .fa-circle {
+        margin-left: -12px;
+        margin-top: 10px;
+    }
+
+    #logo {
+        display: flex;
+
+    }
+
+    nav {
+        width: auto;
+        text-align: left;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav li {
+        padding-left: 4px;
+    }
+
+    nav a {
+        font-size: 1.1em;
+    }
+
+    nav a:hover {
+        border-bottom: 0;
+    }
+
+    #projet {
+        float: left;
+    }
+
+    .allworks {
+        margin: auto;
+    }
+
+    #contact {
+        float: left;
+    }
+
+    .formulaire {
+        margin-left: 200px;
+        margin-top: 100px;
+    }
+
+    .formulaire h3 {
+        width: 104%;
+    }
+}
+
+/*Pour les ordinateurs portables*/
+
+@media screen and (min-width: 990px) and (max-width: 1144px) {
+
+    .allworks {
+        width: 100%; /*ça permet de mettre allworks en colonne par 2*/
+        margin: auto;
+    }
+
+    figure img {
+        height: 100%;
+        width: 199px;
+    }
+
+    .formulaire h3 {
+        width: 104%;
+    }
+
+    .fa-eye {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    figcaption h3 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    figcaption p {
+        text-align: left;
+        font-size: 9px;
+        word-wrap: break-word;
+    }
+
+}
+
+@media screen and (min-width: 1145px) and (max-width: 1320px) {
+    figure img {
+        height: 100%;
+        width: 250px;
+    }
+
+    .fa-eye {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    figcaption h3 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    figcaption p {
+        text-align: left;
+        font-size: 9px;
+        word-wrap: break-word;
+    }
+
+}

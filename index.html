@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!--Header-->
+<head>
+    <meta charset="UTF-8">
+    <!--Viewport-->
+    <meta name="viewport" content="width=device-width">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--Utilisation FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous"> <!--relier FontAwesome-->
+    <title>WebAgency</title>
+</head>
+
+<body>
+<!--Le menu navigation (fixe)-->
+<header>
+    <div id="logo">
+        <img src="images/logo.png" alt="logo"/> <!--logo de l'agence-->
+    </div>
+    <nav> <!--le menu de navigation en fixe-->
+        <ul>
+            <li>
+                <a href="#accueil"> Accueil </a>
+            </li>
+            <li>
+                <a href="#services"> Services </a>
+            </li>
+            <li>
+                <a href="#projet"> Portfolio </a>
+            </li>
+            <li>
+                <a href="#contact"> Contact </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!--Le corps-->
+<!--Section Accueil-->
+<section id="accueil"> <!-- Slidershow-->
+    <div class="container">
+
+        <input type="radio" id="i1" name="images" checked/> <!--la barre défilement par défaut sur le 1er slide-->
+        <input type="radio" id="i2" name="images"/>
+
+        <div class="slide_img" id="one"> <!--image accueil 1-->
+
+            <img src="images/slider/bg1.jpg" alt="bg1">
+
+            <label class="prev" for="i2"><span><i class="fas fa-angle-left"></i></span></label> <!--les chevrons-->
+            <label class="next" for="i2"><span><i class="fas fa-angle-right"></i></span></label>
+
+        </div>
+
+        <div class="slide_img" id="two"> <!--image accueil 2-->
+
+            <img src="images/slider/bg2.jpg" alt="bg2">
+
+            <label class="prev" for="i1"><span><i class="fas fa-angle-left"></i></span></label>
+            <label class="next" for="i1"><span><i class="fas fa-angle-right"></i></span></label>
+
+        </div>
+
+        <div id="nav_slide"> <!--barre de défilement des images-->
+            <label for="i1" class="barres" id="barre1"></label>
+            <label for="i2" class="barres" id="barre2"></label>
+        </div>
+
+        <div class="titreA"> <!--le titre pour l'image-->
+            <h1 class="titreAccueil">
+                <mark>WEBAGENCY</mark>
+                : L'AGENCE DE TOUS VOS PROJETS !
+            </h1>
+            <P class="paraccueil">Vous avez un projet web? La WebAgency vous aide à le réaliser !</P>
+            <a href="#" class="bouton_bleu">Plus d'infos</a> <!--ombre-->
+        </div>
+    </div>
+
+</section>
+
+<!--Section Services-->
+<section id="services">
+    <div id="milieu">
+        <h1>NOS SERVICES</h1>
+        <div>
+            <span class="trait"></span>
+            <span class="fas fa-circle"></span>
+            <span class="trait"></span>
+        </div>
+        <p class="pservices">Nous accompagnons nos clients dans la création de site internet: étude, UX, conception,
+            design, développement, SEO.<br/> Notre agence web est capable de répondre à tous vos besoins
+            et d'élaborer une véritable stratégie digitale.</p>
+    </div>
+
+    <div id="cadre">
+        <div id="image">
+            <img src="images/main-feature.png" alt="image sur mac"/>
+        </div>
+
+        <div id="cercle">
+            <ul>
+                <li class="icone1">
+                    <h2>UX design</h2>
+                    <p>
+                        <span class="fas fa-circle"></span> Nous plaçons toujours l’utilisateur final au centre de
+                        nos réflexions.
+                        C’est ce qu’on appelle le design d’expérience utilisateur.
+                        Avant de concevoir l’aspect graphique d’un site Internet,
+                        nous travaillons systématiquement à rendre l’expérience de navigation simple et intuitive.
+                        Ce travail ergonomique passe par la compréhension du métier et des objectifs de nos clients,
+                        ainsi que par l’analyse des comportements des futurs utilisateurs.
+                    </p>
+                </li>
+                <li class="icone2">
+                    <h2>UI design</h2>
+                    <p>
+                        <span class="fas fa-circle"></span> La réussite d’un projet web, qu’il soit mobile ou
+                        desktop,
+                        repose majoritairement sur 3 grands principes : l’ergonomie, le contenu et l’interface
+                        utilisateur.
+                        C’est cette dernière qui va provoquer le sentiment de « préférence » chez l’utilisateur.
+                        Nous y accordons donc une attention particulière.
+                    </p>
+                </li>
+                <li id="icone3">
+                    <h2>SEO</h2>
+                    <p>
+                        <span class="fas fa-circle"></span> Notre Agence est spécialisée en référencement de site
+                        internet ecommerce,
+                        alors n’hésitez pas, soumettez-nous votre site pour un audit SEO.
+                        A la pointe de la R&D, notre agence SEO dispose d’outils référencement naturel uniques sur
+                        le marché,
+                        testez notre outil d’audit SEO en ligne:
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projet">
+    <div id="allworks">
+        <div id="creative">
+            <div id="corporate">
+                <div id="portfolio">
+                    <h1>NOS PROJETS</h1>
+                    <div id="outerline">
+                        <span class="outer-line"></span>
+                        <span class="fas fa-circle" aria-hidden="true"></span>
+                        <span class="outer-line"></span>
+                    </div>
+                    <p class="pprojet">En plus de 12 ans d’expérience, notre agence digitale a réalisé de très nombreux
+                        projets
+                        dans de multiples domaines.<br/> Découvrez toutes nos références en détails et les témoignages
+                        de nos clients.</p>
+
+
+                    <ul id="projets"> <!--le menu images-->
+                        <li><a href="#allworks" class="lien1">All works</a></li>
+                        <li><a href="#creative" class="lien2">Creative</a></li>
+                        <li><a href="#corporate" class="lien3">Corporate</a></li>
+                        <li><a href="#portfolio" class="lien4">Portfolio</a></li>
+                    </ul>
+                    <div class="allworks">
+                        <figure class="creative">
+                            <img src="images/portfolio/01.jpg" alt=""/>
+                            <figcaption>
+                                <h3>Monsieur.com</h3>
+                                <p>Tout savoir sur la tenue vestimentaire pour les hommes modernes.</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="creative">
+                            <img src="images/portfolio/02.jpg" alt="">
+                            <figcaption>
+                                <h3>Alice au pays.com</h3>
+                                <p>Le design pour le web !</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="creative">
+                            <img src="images/portfolio/03.jpg" alt="">
+                            <figcaption>
+                                <h3>Pompadour.fr</h3>
+                                <p>Histoire de France sur les femmes de pouvoir.</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="corporate">
+                            <img src="images/portfolio/04.jpg" alt="">
+                            <figcaption>
+                                <h3>Hugorga.com</h3>
+                                <p>Le premier site sur la logistique web</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="portfolio">
+                            <img src="images/portfolio/05.jpg" alt="">
+                            <figcaption>
+                                <h3>Mockbag.com</h3>
+                                <p>Des sacs design pour les jeunes mamans</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="portfolio">
+                            <img src="images/portfolio/06.jpg" alt="">
+                            <figcaption>
+                                <h3>NY</h3>
+                                <p>Agence immobilière et location d'immeuble</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="portfolio">
+                            <img src="images/portfolio/07.jpg" alt="">
+                            <figcaption>
+                                <h3>Fuse.com</h3>
+                                <p>Le design à l'état pur !!!</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="portfolio">
+                            <img src="images/portfolio/08.jpg" alt="">
+                            <figcaption>
+                                <h3>Betheme.com</h3>
+                                <p>Mobilier design pour les développeurs web</p>
+                                <div class="fa-eye"></div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="contact">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2216096807174!2d2.3476369161689004!3d48.873051779288964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1534080568937">
+    </iframe> <!--Google map-->
+    <div id="blue"> <!--voile bleu-->
+    </div>
+
+    <!--refaire sur CSS-->
+
+    <div class="formulaire">
+        <form method="post" action="traitement.php"> <!--pas de fichier PHP pour l'instant-->
+
+            <div id="enteteform">
+                <h3>
+                    Contact Info
+                </h3>
+                <p><strong>WebAgency SAS</strong></p>
+                <p>25 rue Hauteville 75010 PARIS</p>
+                <p>Tel: 01 02 03 04 05</p>
+            </div>
+
+            <label for="pseudo"></label>
+            <input type="text" name="pseudo" placeholder="Name" id="pseudo"/>
+            <br/>
+            <label for="mail"></label>
+            <input type="email" name="pass" placeholder="email" id="mail"/>
+            <br/>
+            <label for="subject"></label>
+            <input type="text" name="subject" placeholder="Subject" id="subject"/>
+            <br/>
+            <label for="message"></label><br/>
+            <textarea name="message" placeholder="message" id="message"></textarea>
+
+
+            <input type="submit" value="Send message" id="send"/>
+
+        </form>
+    </div>
+
+</section>
+</body>
+</html>
